@@ -1,0 +1,7 @@
+# Default l10n file
+hello_world=Hello %s, this page is in English
+lblYourLanguage=Your language is:
+lblAvailable=Available languages:
+lblSetLanguage=Change language
+lblJsSample=Click here to run a JavaScript call sample
+msgJsSample=Hello %s, this is a JavaScript call sample

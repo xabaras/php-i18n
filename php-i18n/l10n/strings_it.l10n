@@ -1,0 +1,7 @@
+hello_world=Ciao %s, \
+questa pagina e' in Italiano
+lblYourLanguage=La tua lingua e':
+lblAvailable=Lingue disponibili:
+lblSetLanguage=Cambia lingua
+lblJsSample=Clicca qui per vedere un esempio di chiamata JavaScript
+msgJsSample=Ciao %s, questo e' un esempio di chiamata JavaScript
