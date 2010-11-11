@@ -21,6 +21,7 @@ class Phpi18n{
 	private function __construct() {
 		global $l10n_PATH;
 		global $DEFAULT_LANGUAGE;
+		global $DETECT_CURRENT_LANGUAGE;
 		
 		$this->defaultLocale = $DEFAULT_LANGUAGE;
 		
