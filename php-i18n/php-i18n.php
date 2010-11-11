@@ -16,6 +16,9 @@ $l10n_PATH = $_SERVER["DOCUMENT_ROOT"] . "/php-i18n/php-i18n/l10n/";
 /* Default language for the webapp (the matching file must exist) */
 $DEFAULT_LANGUAGE="en";
 
+/* Says whether to choose current language based on client or not  */
+$DETECT_CURRENT_LANGUAGE=true;
+
 /* DO NOT EDIT UNDER THIS LINE */
 include_once $phpi18n_PATH . "core/Phpi18n.php";
 

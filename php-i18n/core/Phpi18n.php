@@ -23,11 +23,15 @@ class Phpi18n{
 		global $DEFAULT_LANGUAGE;
 		
 		$this->defaultLocale = $DEFAULT_LANGUAGE;
-		$this->currentLocale = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
 		
-		if ($this->defaultLocale != $this->currentLocale){
-			$this->loadLocalization($this->currentLocale);
+		if ($DETECT_CURRENT_LANGUAGE == true){		
+			$this->currentLocale = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
+			
+			if ($this->defaultLocale != $this->currentLocale){
+				$this->loadLocalization($this->currentLocale);
+			}
 		}
+		
 		$filename = $l10n_PATH . "strings_". $this->defaultLocale . ".l10n";
 		$this->localizations[$this->defaultLocale] = new Localization($filename);
 	}
@@ -56,6 +60,7 @@ class Phpi18n{
 				unset($this->localizations[$this->currentLocale]);
 				$this->currentLocale = $code;
 			}
+			$_SESSION["PHPI18N_INSTANCE"]  = $this;
 		}
 	}
 	
