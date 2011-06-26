@@ -1,8 +1,20 @@
 <?php
 /*
- * This file is part of php-i18n Internationalization framework
- * Any use of this file is subject to authorization by copyright owner.
- * 
+ * This file is part of php-i18n.
+ *
+ * php-i18n is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Lesser General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * php-i18n is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU Lesser General Public License for more details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with php-i18n.  If not, see <http://www.gnu.org/licenses/>.
+ *
  */
 
 include_once $phpi18n_PATH . "/core/Localization.php";
@@ -23,18 +35,31 @@ class Phpi18n{
 		global $DEFAULT_LANGUAGE;
 		global $DETECT_CURRENT_LANGUAGE;
 		
-		$this->defaultLocale = $DEFAULT_LANGUAGE;
+		try {
 		
-		if ($DETECT_CURRENT_LANGUAGE == true){		
-			$this->currentLocale = substr($_SERVER["HTTP_ACCEPT_LANGUAGE"], 0, 2);
+			$this->defaultLocale = $DEFAULT_LANGUAGE;
 			
-			if ($this->defaultLocale != $this->currentLocale){
-				$this->loadLocalization($this->currentLocale);
+			if ($DETECT_CURRENT_LANGUAGE == true){
+				$this->currentLocale = $DEFAULT_LANGUAGE;
+				$agentLanguage = $_SERVER["HTTP_ACCEPT_LANGUAGE"];
+				if (isset($agentLanguage)){
+					$agentLanguage = substr($agentLanguage, 0, 2);
+					$availableLanguages = $this->getAvailableLanguages();
+					if ( isset($availableLanguages[$agentLanguage]) ) {
+						$this->currentLocale = $agentLanguage;
+					}
+				}			
+				
+				if ($this->defaultLocale != $this->currentLocale){
+					$this->loadLocalization($this->currentLocale);
+				}
 			}
+			
+			$filename = $l10n_PATH . "strings_". $this->defaultLocale . ".l10n";
+			$this->localizations[$this->defaultLocale] = new Localization($filename);
+		} catch(Exception $e) {
+			print_r($e);
 		}
-		
-		$filename = $l10n_PATH . "strings_". $this->defaultLocale . ".l10n";
-		$this->localizations[$this->defaultLocale] = new Localization($filename);
 	}
 	
 	/**
