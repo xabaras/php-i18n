@@ -32,7 +32,7 @@ $DEFAULT_LANGUAGE="en";
 $DETECT_CURRENT_LANGUAGE=true;
 
 /* DO NOT EDIT UNDER THIS LINE */
-include_once $phpi18n_PATH . "core/Phpi18n.php";
+require_once $phpi18n_PATH . "core/Phpi18n.php";
 
 session_start();
 

@@ -58,7 +58,7 @@ class Phpi18n{
 			$filename = $l10n_PATH . "strings_". $this->defaultLocale . ".l10n";
 			$this->localizations[$this->defaultLocale] = new Localization($filename);
 		} catch(Exception $e) {
-			print_r($e);
+			print($e->getMessage());
 		}
 	}
 	
@@ -67,10 +67,10 @@ class Phpi18n{
 	 * Returns a valid instance of Phpi18n
 	 */
 	public static function getInstance(){
-		if (!isset($_SESSION["PHPI18N_INSTANCE"])){
+		if ( !isset($_SESSION["PHPI18N_INSTANCE"]) ) {
 			$instance = new Phpi18n();
 			$_SESSION["PHPI18N_INSTANCE"] = $instance;
-		}else{
+		} else {
 			$instance = $_SESSION["PHPI18N_INSTANCE"];
 		}
 		return $instance;
