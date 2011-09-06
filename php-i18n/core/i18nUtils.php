@@ -46,7 +46,7 @@ class i18nUtils{
 			if (!$isMultiline){
 				$splitterPos = strpos($line, "=");
 				$key = substr($line, 0, $splitterPos);
-				$value = substr($line, $splitterPos + 1, $len - $splitterPos);
+				$value = substr($line, $splitterPos + 1, $len - $splitterPos - 2);
 			}else {
 				$value .= $line;
 			}
