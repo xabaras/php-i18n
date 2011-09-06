@@ -59,8 +59,8 @@ class i18nUtils{
 				$isMultiline = true;	
 			}else {
 				$isMultiline = false;
+				$result[$key] = $value;
 			}
-			$result[$key] = $value;
 		}
 		fclose($fd);
 		return $result;
