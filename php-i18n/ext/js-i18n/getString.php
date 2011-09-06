@@ -31,5 +31,15 @@ if (isset($_POST["key"])){
 		$str = Phpi18n::getInstance()->getString($key);
 		print $str;
 	}
+} elseif ( isset($_POST["cmd"]) ) {
+	$cmd = $_POST["cmd"];
+	switch($cmd) {
+		case 'getCurrentLanguage':
+			$str = Phpi18n::getInstance()->getCurrentLanguage();
+			break;
+		default:
+			$str = "";
+	}
+	print($str);
 }
 ?>

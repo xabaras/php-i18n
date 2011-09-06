@@ -21,6 +21,10 @@ $relativePath = str_replace($_SERVER["DOCUMENT_ROOT"], "", $phpi18n_PATH);
 ?>
 <script type="text/javascript">
 <!--
+
+/**
+ * @param key the key identifying the localized string
+ */
 function getString(key){
 	var str = $.ajax({
 		type: "post",
@@ -48,6 +52,17 @@ function getFormattedString(){
 		type: "post",
 		url: "<?php print $relativePath; ?>ext/js-i18n/getString.php",
 		data: {key: key, args: args},
+		async: false
+		}).responseText;
+	return str;
+}
+
+
+function getCurrentLanguage() {
+	var str = $.ajax({
+		type: "post",
+		url: "<?php print $relativePath; ?>ext/js-i18n/getString.php",
+		data: {cmd: "getCurrentLanguage"},
 		async: false
 		}).responseText;
 	return str;
