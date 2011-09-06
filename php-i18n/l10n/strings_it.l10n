@@ -5,3 +5,7 @@ lblAvailable=Lingue disponibili:
 lblSetLanguage=Cambia lingua
 lblJsSample=Clicca qui per vedere un esempio di chiamata JavaScript
 msgJsSample=Ciao %s, questo e' un esempio di chiamata JavaScript
+
+# Language specific keys, don't remove
+country_code=IT
+locale=it_IT

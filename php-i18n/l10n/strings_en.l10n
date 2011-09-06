@@ -5,3 +5,7 @@ lblAvailable=Available languages:
 lblSetLanguage=Change language
 lblJsSample=Click here to run a JavaScript call sample
 msgJsSample=Hello %s, this is a JavaScript call sample
+
+# Language specific keys, don't remove
+country_code=US
+locale=en_US
