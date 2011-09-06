@@ -25,7 +25,7 @@ $phpi18n_PATH = $_SERVER["DOCUMENT_ROOT"] . "/php-i18n/php-i18n/";
 /* Path where localization files (es: string_en.i10n) are placed */
 $l10n_PATH = $_SERVER["DOCUMENT_ROOT"] . "/php-i18n/php-i18n/l10n/";
 
-/* Default language for the webapp (the matching file must exist) */
+/* Default language (two letters ISO 639-1 code) for the webapp (the matching file must exist) */
 $DEFAULT_LANGUAGE="en";
 
 /* Says whether to choose current language based on client or not  */
