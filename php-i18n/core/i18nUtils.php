@@ -28,13 +28,15 @@ class i18nUtils{
 	 * Reads a Java Style Properties file and returns an associative array
 	 * @param String $path path of the properties file
 	 */
-	public static function parse_properties($path){
+public static function parse_properties($path){
 		$result = array();
 		$isMultiline = false;
+		$key="";
 		
 		$fd = fopen($path, "r");
 		while ( !feof($fd) ){
 			$line = fgets($fd);
+			$line = str_replace("\n", "", $line);
 			
 			$len = strlen($line);
 			$diesisPos = strpos($line, "#");
@@ -46,7 +48,7 @@ class i18nUtils{
 			if (!$isMultiline){
 				$splitterPos = strpos($line, "=");
 				$key = substr($line, 0, $splitterPos);
-				$value = substr($line, $splitterPos + 1, $len - $splitterPos - 2);
+				$value = substr($line, $splitterPos + 1, $len - $splitterPos - 1);
 			}else {
 				$value .= $line;
 			}
