@@ -20,7 +20,7 @@
 /**
  * 
  * Utility class for working with internationalization
- * @author Xabaras
+ * @author Paolo Montalto
  *
  */
 class i18nUtils{
@@ -48,18 +48,18 @@ public static function parse_properties($path){
 			if (!$isMultiline){
 				$splitterPos = strpos($line, "=");
 				$key = substr($line, 0, $splitterPos);
-				$value = substr($line, $splitterPos + 1, $len - $splitterPos - 1);
-			}else {
+				$value = substr($line, $splitterPos + 1, $len - $splitterPos);
+			} else {
 				$value .= $line;
 			}
 			
 			// Check whether is multi line or not
-			$lineDelimiterPos = strpos($line, "\\");
-			$lineEnd = strlen($line) - 1 - strlen("\\");
-			if ($lineDelimiterPos === $lineEnd){
+			$lineDelimiterPos = strpos($value, "\\");
+			$lineEnd = strlen($value) - strlen("\\");
+			if ( $lineDelimiterPos === $lineEnd ){
 				$value = substr($value, 0, strlen($value) - 2);
 				$isMultiline = true;	
-			}else {
+			} else {
 				$isMultiline = false;
 				$result[$key] = $value;
 			}
