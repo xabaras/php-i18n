@@ -58,6 +58,47 @@ locale=en_US
 ```
 N.B. You must specify and never remove country_code and locale properties in each localization file.
 
+## Usage ##
+
+php-i18n provide simple API to access localized strings, all you have to do is including php-i18n.php in your php file (e.g. `include_once "../php-i18n/php-i18n.php";`) and use one of the methods provided by the php-18n API.
+
+See [hello world sample](https://bitbucket.org/xabaras/php-i18n/src/82e918dbf4d1f825c1e78bf1a2bb9ce58f7a9076/samples/helloworld.php) for any examples.
+
+
+#### getString($key) ###
+Returns a localized string for the given key.
+
+Can also be accessed as `Phpi18n::getInstance()->getString($key)`
+
+#### printString($key) ###
+Prints a localized string for the given key.
+
+Can also be accessed as `Phpi18n::getInstance()->printString($key)`
+
+
+#### getFormattedString($key, $args) ###
+Returns a formatted localized string replacing placeholders with supplied values.
+
+It uses the same format as sprintf.
+
+Can also be accessed as `Phpi18n::getInstance()->getFormattedString($key, $args)`
+
+
+#### printFormattedString($key, $args) ###
+Prints a formatted localized string replacing placeholders with supplied values.
+
+It uses the same format as sprintf.
+
+Can also be accessed as `Phpi18n::getInstance()->printFormattedString($key, $args)`
+
+## JavaScript extension ##
+
+php-i18n provides a JavaScript extension to let you use localization in your Javascript code as well as in php one.
+All you have to do is include the 'php-i18n /ext /js-i18n/js-i18n.php' in your php file and you'll be able to use getString and getFormattedString from within your JS scripts.
+
+N.B. js-i18n extension requires jQuery 
+
+
 ## Contribution guidelines ##
 
 You can contribute to the project by:
