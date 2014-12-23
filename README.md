@@ -96,6 +96,8 @@ Can also be accessed as `Phpi18n::getInstance()->printFormattedString($key, $arg
 php-i18n provides a JavaScript extension to let you use localization in your Javascript code as well as in php one.
 All you have to do is include the 'php-i18n /ext /js-i18n/js-i18n.php' in your php file and you'll be able to use getString and getFormattedString from within your JS scripts.
 
+See [hello world sample](https://bitbucket.org/xabaras/php-i18n/src/82e918dbf4d1f825c1e78bf1a2bb9ce58f7a9076/samples/helloworld.php) for a sample of how it works.
+
 N.B. js-i18n extension requires jQuery 
 
 
