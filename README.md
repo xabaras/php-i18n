@@ -2,12 +2,12 @@
 
 Here follows a brief description of what is php-i18n and how to get it to work properly.
 
-### What is php-i18n ###
+## What is php-i18n ##
 
 php-i18n is an internationalization library for php web applications, it is aimed to help developers getting rid of custom code when dealing with website localizations.
 
 
-### How do I get set up? ###
+## How do I get set up? ##
 
 It is simple to getting started with php-i18n you should simply:
 
@@ -15,7 +15,7 @@ It is simple to getting started with php-i18n you should simply:
 * Fill in the proper configuration values in the "CONFIGUIRATION SECTION" in the "php-i18n / php-i18n.php" file
 * Add localization files to the l10n directory
 
-## CONFIGURATION ##
+### CONFIGURATION ###
 
 In the "CONFIGURATION SECTION" of the "php-i18n/php-i18n.php" file you'll find the following configuration options:
 
@@ -34,7 +34,7 @@ $DEFAULT_LANGUAGE="en";
 /* Says whether to choose current language based on client or not  */
 $DETECT_CURRENT_LANGUAGE=true;
 ```
-## Localization files ##
+### Localization files ###
 
 You can write a localization file for each language. Localization files (extension .l10n) are automatically detected from the l10n directory provided that their name is strings_xx.l10n, where "xx" is the two letters ISO 639-1 code of the laguage to which the translation refers to.
 
@@ -58,7 +58,7 @@ locale=en_US
 ```
 N.B. You must specify and never remove country_code and locale properties in each localization file.
 
-### Contribution guidelines ###
+## Contribution guidelines ##
 
 You can contribute to the project by:
 
@@ -66,6 +66,6 @@ You can contribute to the project by:
 * Writing tests
 * Proposing missing features
 
-### Who do I talk to? ###
+## Who do I talk to? ##
 
 Paolo Montalto (repository owner): <p.montalto@twomensudio.com>
