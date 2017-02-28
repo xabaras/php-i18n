@@ -12,7 +12,7 @@ php-i18n is an internationalization library for php web applications, it is aime
 It is simple to getting started with php-i18n you should simply:
 
 * Deploy the php-i18n directory anywhere you want on a php enabled server
-* Fill in the proper configuration values in the "CONFIGUIRATION SECTION" in the "php-i18n / php-i18n.php" file
+* Fill in the proper configuration values in the "CONFIGURATION SECTION" in the "php-i18n / php-i18n.php" file
 * Add localization files to the l10n directory
 
 ### CONFIGURATION ###
@@ -113,4 +113,4 @@ You can contribute to the project by:
 
 ## Who do I talk to? ##
 
-Paolo Montalto (repository owner): <p.montalto@twomensudio.com>
+Paolo Montalto (repository owner): <p.montalto@xabaras.it>
