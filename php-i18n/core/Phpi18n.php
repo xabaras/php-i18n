@@ -109,7 +109,8 @@ class Phpi18n{
 				$val = $this->localizations[$this->defaultLocale]->getString($key);
 			}	
 		} catch (Exception $e) {
-		}			
+		}
+        $val = str_replace('\n', "\n", $val);
 		return $val;
 	}
 	
@@ -199,10 +200,10 @@ class Phpi18n{
 		if ($numargs >= 2) {
 			$args = func_get_args();
 			$args[0] = $str;
-			return call_user_func_array("sprintf",$args);
-		}else {
-			return $str;
-		}
+            $str = call_user_func_array("sprintf",$args);
+        }
+        $str = str_replace('\n', "\n", $str);
+        return $str;
 	}
 }
 ?>
