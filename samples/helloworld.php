@@ -16,6 +16,10 @@
  * along with php-i18n.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
+
+/***
+ * helloworld v1.1
+ */
 ?>
 <html>
 	<head>
@@ -58,7 +62,8 @@
 			<input type="submit" value"<?php printString("lblChangeLanguage"); ?>" />
 		</form>
 		<p>
-			<input type="button" value="<?php printString("lblJsSample")?>" onclick="alert(getFormattedString('msgJsSample','Paolo'));"/>
+			<input type="button" value="<?php printString("lblJsSample")?>" onclick="getFormattedStringAsync('msgJsSample', 'Paolo').then(
+		function(value) {alert(value});"/>
 		</p>
 	</body>
 </html>
